@@ -1,0 +1,29 @@
+/*sticer
+/*________________________________________________*/
+.sticker {
+	font-size : 42px;
+	line-height : 1;
+	display : inline-block;
+	width : 80px;
+	height : 80px;
+	padding : 10px;
+	transition : background $transition-base;
+	text-align : center;
+	vertical-align : top;
+	color : $white;
+	border-radius : 50%;
+	background : $blue;
+
+	@include respondToMax($screen-md-max) {
+		font-size : 24px;
+		width : 65px;
+		height : 65px;
+	}
+
+	&__measure {
+		font-size : 21px;
+		line-height : inherit;
+		display : block;
+	}
+}
+
