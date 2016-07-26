@@ -1,0 +1,60 @@
+/*question
+/*________________________________________________*/
+.question {
+	display : flex;
+	min-height : 100vh;
+	padding-top : 35px;
+	padding-bottom : 35px;
+	background-color : $body-bg;
+	background-image : linear-gradient(to top, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .25) 100%),
+	url("../imgs/question-pattern.jpg");
+
+	justify-content : center;
+	align-items : center;
+	@include respondToMax($screen-md-max) {
+		padding-top : 25px;
+		padding-bottom : 25px;
+	}
+
+	&__title {
+		font-family : "Exo2.0-Thin", Helvetica, Arial, sans-serif;
+		font-weight : 300;
+		margin-bottom : 25px;
+		text-align : center;
+		color : $white;
+		@include font-size($question-title);
+
+		&:last-child {
+			margin-bottom : 0;
+		}
+	}
+
+	.container_flex {
+		align-items : center;
+	}
+
+	&__list {
+		display : flex;
+		margin-right : -$gutter-lg;
+		margin-bottom : -15px;
+		margin-left : -$gutter-lg;
+		align-items : flex-start;
+		justify-content : space-around;
+		flex-wrap : wrap;
+
+		@include respondToMax($screen-md-max) {
+			margin-right : -$gutter-md;
+			margin-left : -$gutter-md;
+		}
+
+		@include respondToMax($screen-sm-max) {
+			margin-right : -$gutter-sm;
+			margin-left : -$gutter-sm;
+		}
+	}
+
+	&__item {
+		margin-bottom : 15px;
+	}
+}
+
