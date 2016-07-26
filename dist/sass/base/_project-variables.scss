@@ -1,0 +1,78 @@
+// Variables
+//_____________________________________________________
+
+// my_colors
+$black-90 : #161616;
+$black-light : #333;
+$blue-light : #81b3d2;
+$blue-base : #81b3d2;
+$blue-dark : #5496bd;
+$blue-hover : #669ec0;
+$brown : #766357;
+$gray-lighter : #e5e5e5;
+$purple : #d91667;
+
+//------------------
+$gray : #666;
+$gray-90 : #b3b3b3;
+$black : #000;
+$white : #fff;
+$white-90 : #f2f2f2;
+$blue : #1698d9;
+$blue-110 : #2ea8e6;
+$purple-110 : #e62e7a;
+$yellow : #ff6;
+
+//my_scaffolding
+$body-bg : $black-90;
+$text-color : $gray;
+
+//my_media queries breakpoints
+$screen-xs : 480px;
+$screen-sm : 768px;
+$screen-md : 992px;
+$screen-lg : 1220px;
+$screen-xl : $screen-lg;
+$screen-xxs-max : $screen-xs - 1;
+$screen-xs-max : $screen-sm - 1;
+$screen-sm-max : $screen-md - 1;
+$screen-md-max : $screen-lg - 1;
+$screen-lg-max : 1120px;
+
+//my_container
+$gutter-sm : 20px;
+$gutter-md : 30px;
+$gutter-lg : 40px;
+$container-sm : 700px;
+$container-md : 1020px;
+$container-lg : 1200px;
+
+//my_typography
+$font-family-base : "Trebuchet MS", Helvetica, Arial, sans-serif;
+$project-font-size-base : (
+	null: (14px, 16px)
+);
+
+//my_question
+$question-title : (
+	null: (36px, 44px),
+	$screen-md: 28px
+);
+
+//card
+$card-default : $blue;
+$card-hover : $blue-110;
+$card-selected : $purple;
+$card-selected-hover : $purple-110;
+$card-disabled : $gray-90;
+$card-description-disabled : $yellow;
+$card-prew-title : (
+	null: (46px),
+	$screen-md: 38px
+);
+$card-prew-title-small : (
+	null: (24px),
+	$screen-md: 22px
+);
+//my_animate
+$transition-base : .5s ease;

@@ -1,0 +1,58 @@
+//миксин для медиа запросов
+@mixin respondToMin($media) {
+	@if $media == $screen-xs {
+		@media (min-width: $screen-xxs) {
+			@content;
+		}
+	}
+
+	@else if $media == $screen-sm {
+		@media (max-width: $screen-sm) {
+			@content;
+		}
+	}
+	@else if $media == $screen-md {
+		@media (min-width: $screen-md) {
+			@content;
+		}
+	}
+	@else if $media == $screen-lg {
+		@media (min-width: $screen-lg) {
+			@content;
+		}
+	}
+	@else if $media == $screen-xl {
+		@media (min-width: $screen-xl) {
+			@content;
+		}
+	}
+}
+
+@mixin respondToMax($media) {
+	@if $media == $screen-xxs-max {
+		@media (max-width: $screen-xxs-max) {
+			@content;
+		}
+	}
+	@else if $media == $screen-xs-max {
+		@media (max-width: $screen-xs-max) {
+			@content;
+		}
+	}
+	@else if $media == $screen-sm-max {
+		@media (max-width: $screen-sm-max) {
+			@content;
+		}
+	}
+	@else if $media == $screen-md-max {
+		@media (max-width: $screen-md-max) {
+			@content;
+		}
+	}
+
+	@else if $media == $screen-lg-max {
+		@media (max-width: $screen-lg-max) {
+			@content;
+		}
+	}
+}

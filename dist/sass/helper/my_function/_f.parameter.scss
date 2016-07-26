@@ -1,0 +1,18 @@
+//вытянуть значение из мапа (функция)
+@function parameter($parameterMap, $style, $value) {
+	@if map-has-key($parameterMap, $style) {
+		@return map-get(map-get($parameterMap, $style), $value);
+	}
+}
+/**
+ * color()
+ * fontSize()
+ * fontWeight()
+ * lineHeight()
+ * letterSpacing()
+ * fontFamily()
+ * spacing()
+ * zIndex()
+ * container()
+ * screenSize()
+ */

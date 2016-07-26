@@ -1,0 +1,22 @@
+@mixin absolute-position-center($class, $class-item) {
+	#{$class} {
+		position : relative;
+		display : block;
+		overflow : hidden;
+		min-height : 200px;
+
+		#{$class-item} {
+			position : absolute;
+			top : 0;
+			right : 0;
+			bottom : 0;
+			left : 0;
+			display : block;
+			width : 100%;
+			height : auto;
+			margin : auto;
+		}
+	}
+}
+
+

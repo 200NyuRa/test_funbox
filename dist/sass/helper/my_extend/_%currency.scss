@@ -1,0 +1,13 @@
+//extend для добавления знаков денежных единиц
+%currency {
+	position : relative;
+	&:before {
+		position : relative;
+		left : 0;
+		content : "$";
+	}
+}
+//.USD %currency:before { content: '$'; }
+//.EUR %currency:before { content: '\20AC'; }
+//.ILS %currency:before { content: '\20AA'; }
+//.GBP %currency:before { content: '\00A3'; }

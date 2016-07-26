@@ -1,0 +1,28 @@
+//треугольник
+@mixin triangle($direction, $size : 6px, $color: #222) {
+	position : absolute;
+	display : block;
+	width : 0;
+	height : 0;
+	content : "";
+	@if ($direction == "up") {
+		border-right : 1/2*$size solid transparent;
+		border-bottom : $size solid $color;
+		border-left : 1/2*$size solid transparent;
+	}
+	@else if ($direction == "down") {
+		border-top : $size solid $color;
+		border-right : 1/2*$size solid transparent;
+		border-left : 1/2*$size solid transparent;
+	}
+	@else if ($direction == "left") {
+		border-top : 1/2*$size solid transparent;
+		border-right : $size solid $color;
+		border-bottom : 1/2*$size solid transparent;
+	}
+	@else if ($direction == "right") {
+		border-top : 1/2*$size solid transparent;
+		border-bottom : 1/2*$size solid transparent;
+		border-left : $size solid $color;
+	}
+}

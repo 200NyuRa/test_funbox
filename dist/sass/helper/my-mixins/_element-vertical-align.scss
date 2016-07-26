@@ -1,0 +1,4 @@
+@mixin element-vertical-align($wrapper-element-height, $element-height) {
+	margin-top : (($wrapper-element-height - $element-height) / 2);
+	margin-bottom : (($wrapper-element-height - $element-height) / 2);
+}

@@ -1,0 +1,22 @@
+@mixin images-responsive($display : block, $max-width: 100%, $max-height: 100%) {
+	display : $display;
+	width : 100%;
+	max-width : $max-width;
+	height : auto;
+	max-height : $max-height;
+}
+
+@mixin images-rounded($border-radius-large : 20px) {
+	border-radius : $border-radius-large;
+}
+
+@mixin images-thumbnail ($thumbnail-padding : 5px, $thumbnail-bg: #000, $thumbnail-border: 1px solid red) {
+	line-height : $line-height-base;
+	padding : $thumbnail-padding;
+	transition : $var $transition-base;
+	border : 1px solid $thumbnail-border;
+	background-color : $thumbnail-bg;
+
+	@include images-rounded (25px);
+	@include images-responsive();
+}

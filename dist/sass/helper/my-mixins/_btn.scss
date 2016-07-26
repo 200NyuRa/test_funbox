@@ -1,0 +1,15 @@
+@mixin btn-style ($color : #fff, $background: #f0f, $border-color: 1px solid green) {
+	color : $color;
+	border-color : $border-color;
+	background : $background;
+	@content;
+}
+
+@mixin btn-size($padding-vertical : 10px, $padding-horizontal: 10px,
+	$font-size: 14px, $line-height: 20px, $border-radius: 10px) {
+	font-size : $font-size;
+	line-height : $line-height;
+	padding : $padding-vertical $padding-horizontal;
+	border-radius : $border-radius;
+	@content;
+}

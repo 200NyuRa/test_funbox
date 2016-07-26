@@ -1,0 +1,14 @@
+//Плавное появление элемента
+@mixin view($status) {
+	@if $status == "hide" {
+		z-index : -1;
+		display : none;
+		opacity : 0;
+	}
+
+	@else if $status == "show" {
+		z-index : 1;
+		display : block;
+		opacity : 1;
+	}
+}

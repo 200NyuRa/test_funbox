@@ -1,0 +1,43 @@
+//организация адаптивной типографики
+//варинт 1 для mobile first
+//@mixin font-size($fs-map) {
+//	@each $fs-breakpoint, $fs-font-size in $fs-map {
+//		@if $fs-breakpoint == null {
+//			@include make-font-size($fs-font-size);
+//		}
+//		@else {
+//			@media screen and (min-width: $fs-breakpoint) {
+//				@include make-font-size($fs-font-size);
+//			}
+//		}
+//	}
+//}
+
+//варинт 2 если верстка начинается с макета с наибольшим разрешением
+@mixin font-size($fs-map) {
+	@each $fs-breakpoint, $fs-font-size in $fs-map {
+		@if $fs-breakpoint == null {
+			@include make-font-size($fs-font-size);
+		}
+		@else {
+			@media screen and (max-width: $fs-breakpoint - 1) {
+				@include make-font-size($fs-font-size);
+			}
+		}
+	}
+}
+
+@mixin make-font-size($fs-font-size) {
+	@if type-of($fs-font-size) == "list" {
+		font-size: nth($fs-font-size, 1);
+		@if (length($fs-font-size) > 1) {
+			$line-height: nth($fs-font-size, 2)/nth($fs-font-size, 1);
+			line-height: decimal-floor($line-height, 2);
+		}
+	}
+	@else {
+		font-size: $fs-font-size;
+	}
+}
+
+

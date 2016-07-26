@@ -1,0 +1,41 @@
+@mixin form-validation($text-color : #ccc, $fill-color: #ccc, $stroke-color: #ccc, $background: #c5c5c5,
+	$border-color: 1px solid #ccc) {
+	.form__simple-text,
+	.form__label,
+	.form__field,
+	.form__checkbox-label,
+	.form__radio-label {
+		color : $text-color;
+	}
+
+	.form__radio:after,
+	.form__radio:before,
+	.form__checkbox:after,
+	.form__checkbox:before,
+	.form__icon {
+		fill : $fill-color;
+		stroke : $stroke-color;
+	}
+
+	.form__field {
+		border-color : $border-color;
+		background : $background;
+		box-shadow : $box-shadow;
+
+		$box-shadow : inset 0 1px 1px rgba(0,0,0,.075);
+		&:focus {
+			border-color : $border-color;
+			box-shadow : $focus-shadow;
+
+			$focus-shadow : inset 0 1px 1px rgba(0,0,0,.075), inset 0 1px 1px rgba(0,0,0,.075);
+		}
+	}
+
+	.input-group__addon {
+		color : $text-color;
+		border-color : $border-color;
+		background-color : $background;
+	}
+
+	@content;
+}

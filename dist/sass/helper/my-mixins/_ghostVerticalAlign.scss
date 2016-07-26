@@ -1,0 +1,10 @@
+//Вертикальное выравнивание элементов с неизвестными размерами размерами
+@mixin ghostVerticalAlign() {
+	&:before {
+		display : inline-block;
+		width : .1px;
+		height : 100%;
+		content : "";
+		vertical-align : middle;
+	}
+}
