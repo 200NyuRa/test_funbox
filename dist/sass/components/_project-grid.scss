@@ -1,0 +1,23 @@
+/* style container______*/
+.container {
+	overflow : hidden;
+	min-width : 320px;
+	max-width : $container-lg;
+	padding : 0 $gutter-lg ;
+
+	@include respondToMax($screen-md-max) {
+		max-width : $container-md;
+		padding : 0 $gutter-md;
+	}
+
+	@include respondToMax($screen-sm-max) {
+		max-width : $container-sm;
+		padding : 0 $gutter-sm;
+	}
+
+	@include respondToMax($screen-xs-max) {
+		width : 100%;
+	}
+}
+
+
