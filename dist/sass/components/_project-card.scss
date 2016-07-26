@@ -1,0 +1,319 @@
+/*card
+/*________________________________________________*/
+input[type="checkbox"] {
+	display : none;
+}
+
+.card {
+	position : relative;
+	width : 320px;
+	margin-right : $gutter-lg;
+	margin-left : $gutter-lg;
+
+	@include respondToMax($screen-md-max) {
+		width : 280px;
+		margin-right : $gutter-md;
+		margin-left : $gutter-md;
+	}
+
+	@include respondToMax($screen-sm-max) {
+		margin-right : $gutter-sm;
+		margin-left : $gutter-sm;
+	}
+
+	&__prew-wrapper {
+		height : 479px;
+		margin-bottom : 15px;
+
+		@include respondToMax($screen-md-max) {
+			height : 420px;
+		}
+
+		&:last-child {
+			margin-bottom : 0;
+		}
+	}
+
+	&__prew {
+		position : relative;
+		display : block;
+		overflow : hidden;
+		height : 479px;
+		cursor : pointer;
+		border : 4px solid transparent;
+		border-radius : 12px;
+
+		@include respondToMax($screen-md-max) {
+			height : 420px;
+		}
+	}
+
+	&__prew-bg {
+		position : absolute;
+		top : 0;
+		right : 0;
+		bottom : 0;
+		left : 0;
+		width : 100%;
+		transition : all $transition-base;
+		stroke : $card-default;
+		fill : #f2f2f2;
+	}
+
+	&__prew-text {
+		overflow : hidden;
+		height : 205px;
+		padding : 16px 45px;
+	}
+
+	&__prew-caption-wrapper {
+		font-size : 16px;
+		line-height : 1.2;
+		position : relative;
+		overflow : hidden;
+		height : 20px;
+		margin-bottom : 10px;
+
+		&:last-child {
+			margin-bottom : 0;
+		}
+	}
+
+	&__prew-caption {
+		position : absolute;
+		top : 0;
+		left : 0;
+		transition : opacity $transition-base;
+
+		&_default {
+			opacity : 1;
+		}
+
+		&_selected-hover {
+			z-index : -1;
+			opacity : 0;
+		}
+	}
+
+	&__prew-info {
+		font-size : 14px;
+		line-height : 1.2;
+
+		span {
+			font-weight : 700;
+		}
+	}
+
+	&__prew-title {
+		font-weight : 700;
+		line-height : 1.1;
+		margin-bottom : 15px;
+		letter-spacing : 1.3px;
+		color : #000;
+		@include font-size($card-prew-title);
+
+		&:last-child {
+			margin-bottom : 0;
+		}
+	}
+
+	&__prew-title_small {
+		letter-spacing : normal;
+		@include font-size($card-prew-title-small);
+	}
+
+	&__prew-title_block {
+		display : block;
+	}
+
+	img {
+		display : block;
+		width : 100%;
+		height : auto;
+		margin-left : -4px;
+		border-style : none;
+	}
+
+	&__prew-stickers {
+		position : absolute;
+		right : 4%;
+		bottom : 1%;
+	}
+
+	&__description-wrapper {
+		position : relative;
+		overflow : hidden;
+		height : 40px;
+		transition : all $transition-base;
+		text-align : center;
+	}
+
+	&__description {
+		font-size : 13px;
+		line-height : 1;
+		position : absolute;
+		top : 0;
+		right : 0;
+		left : 0;
+		transition : opacity $transition-base;
+		color : $white;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+	}
+
+	&__description_default {
+		opacity : 1;
+	}
+
+	&__description_selected,
+	&__description_disabled {
+		z-index : -1;
+		opacity : 0;
+	}
+
+	&__caption-link {
+		transition : all $transition-base;
+		text-decoration : none;
+		color : $card-default;
+		border-bottom : 1px dashed $card-default;
+	}
+}
+
+/* card hover ______*/
+.card__prew-wrapper:hover {
+	.card__prew-bg {
+		stroke : $card-hover;
+	}
+
+	.sticker {
+		background : $card-hover;
+	}
+
+	~ .card__description-wrapper .card__caption-link {
+		color : $card-hover;
+	}
+}
+
+/* card prew selected ______*/
+input[type="checkbox"]:checked {
+	+ .card__prew-wrapper {
+		.card__prew-bg {
+			stroke : $card-selected;
+		}
+
+		.sticker {
+			background : $card-selected;
+		}
+	}
+
+	~ .card__description-wrapper .card__description_selected {
+		z-index : 1;
+		opacity : 1;
+	}
+
+	~ .card__description-wrapper .card__description_default {
+		z-index : -1;
+		opacity : 0;
+	}
+}
+
+/* стили для (.card__prew - карточки) при наведении на выбранную карточку______*/
+input[type="checkbox"]:checked.js-hover {
+	+ .card__prew-wrapper {
+		.card__prew-bg {
+			stroke : $card-selected-hover;
+		}
+
+		.sticker {
+			background : $card-selected-hover;
+		}
+
+		.card__prew-caption_default {
+			z-index : -1;
+			opacity : 0;
+		}
+
+		.card__prew-caption_selected-hover {
+			z-index : 1;
+			opacity : 1;
+			color : $card-selected-hover;
+		}
+	}
+}
+
+/* card disable ______*/
+input[type="checkbox"][disabled],
+input[type="checkbox"].disabled {
+	+ .card__prew-wrapper {
+		.card__prew-bg {
+			stroke : $card-disabled;
+		}
+
+		img {
+			opacity : .5;
+		}
+
+		.sticker {
+			background : $card-disabled;
+		}
+
+		.card__prew-caption,
+		.card__prew-title,
+		.card__prew-info {
+			color : $card-disabled;
+		}
+	}
+
+	~ .card__description-wrapper {
+		.card__description_default,
+		.card__description_selected {
+			z-index : -1;
+			opacity : 0;
+		}
+
+		.card__description_disabled {
+			z-index : 1;
+			opacity : 1;
+			color : $card-description-disabled;
+		}
+	}
+}
+
+/* card:checked disable ______*/
+input[type="checkbox"]:checked[disabled].js-hover,
+input[type="checkbox"]:checked.disabled.js-hover {
+	+ .card__prew-wrapper {
+		.card__prew-caption_default {
+			z-index : 1;
+			opacity : 1;
+		}
+
+		.card__prew-caption_selected-hover {
+			z-index : -1;
+			opacity : 0;
+		}
+
+		.card__prew-bg {
+			stroke : $card-disabled;
+		}
+
+		img {
+			opacity : .5;
+		}
+
+		.sticker {
+			background : $card-disabled;
+		}
+
+		.card__prew-caption,
+		.card__prew-title,
+		.card__prew-info {
+			color : $card-disabled;
+		}
+	}
+
+	.card__description_disabled {
+		color : $card-description-disabled;
+	}
+}
+
+
