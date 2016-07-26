@@ -490,6 +490,7 @@ input[type="checkbox"] {
       margin-right: 20px;
       margin-left: 20px; } }
   .card__prew-wrapper {
+    position: relative;
     height: 479px;
     margin-bottom: 15px; }
     @media (max-width: 1219px) {
@@ -515,6 +516,7 @@ input[type="checkbox"] {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     transition: all 0.5s ease;
     stroke: #1698d9;
     fill: #f2f2f2; }
@@ -566,7 +568,7 @@ input[type="checkbox"] {
         font-size: 22px; } }
   .card__prew-title_block {
     display: block; }
-  .card img {
+  .card > img {
     display: block;
     width: 100%;
     height: auto;
